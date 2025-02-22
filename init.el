@@ -161,13 +161,13 @@
  :init (counsel-projectile-mode))
 
 ;; Flycheck
-(use-package flycheck
- :ensure t
- :straight t
- :config
- (setq truncate-lines nil)
- :hook
- (prog-mode . flycheck-mode))
+;(use-package flycheck
+; :ensure t
+; :straight t
+; :config
+; (setq truncate-lines nil)
+; :hook
+; (prog-mode . flycheck-mode))
 
 
 
