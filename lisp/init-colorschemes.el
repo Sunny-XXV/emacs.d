@@ -2,6 +2,28 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package doom-themes
+  :ensure t
+  :straight t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+	doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;(load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (nerd-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
+;(defun on-after-init ()
+;  (unless (display-graphic-p (selected-frame))
+;    (set-face-background 'default "unspecified-bg" (selected-frame))))
+
+;(add-hook 'window-setup-hook 'on-after-init)
+
 ;(use-package 'color-theme-sanityinc-solarized :straight t)
 ;(use-package 'color-theme-sanityinc-tomorrow :straight t)
 ;

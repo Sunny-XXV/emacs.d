@@ -29,6 +29,7 @@ site-lisp/package/
 /.achievements
 /.bookmarks.el
 /history
+/straight
 /helm-adaptive-history
 /thumbs/
 /emms/

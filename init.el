@@ -68,6 +68,15 @@
 (setq visible-bell t)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(setq scroll-conservatively 10)
+(setq scroll-margin 8)
+
+;; Auto-Save
+(require 'auto-save)
+(auto-save-enable)
+
+(setq auto-save-silent t)   ; quietly save
+(setq auto-save-delete-trailing-whitespace t)  ; automatically delete spaces at the end of the line when saving
 
 ;; Ace-window
 (use-package ace-window
@@ -83,24 +92,11 @@
  :custom
  (undo-tree-auto-save-history nil))
 
-;; Smart mode line
-;(use-package smart-mode-line
-; :ensure t
-; :straight t
-; :init (sml/setup))
-
 ;; Evil
 (use-package evil
  :ensure t
  :straight t
  :init (evil-mode))
-
-;; Smooth Scrolling
-(use-package smooth-scrolling
-  :ensure t
-  :straight t
-  :init
-  (smooth-scrolling-mode 1))
 
 ;; Avy
 (use-package avy
@@ -121,7 +117,7 @@
   :straight t
   :config
   (global-evil-mc-mode 1)  ; enable globally
-  
+
   ;; Default keybindings will be:
   ;; grm - Make cursor at point and move to the next match
   ;; grc - Toggle cursor at point
@@ -142,12 +138,12 @@
   (bookmarks . 5)
   (projects . 10)))
  (dashboard-setup-startup-hook))
- 
+
 ;; Rainbow delimiters colorful brackets
 (use-package rainbow-delimiters
  :ensure t
  :straight t
- :hook (prog-mode . rainbow-delimiters-mode)) 
+ :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; Projectile
 (use-package projectile
@@ -164,11 +160,6 @@
  :after (projectile)
  :init (counsel-projectile-mode))
 
-;; Magit
-;(use-package magit
-;  :ensure t
-;  :straight t)
-
 ;; Flycheck
 (use-package flycheck
  :ensure t
@@ -178,45 +169,7 @@
  :hook
  (prog-mode . flycheck-mode))
 
-;; Corfu + Cape + Orderless
-;(use-package corfu
-;  :straight t
-;  :custom
-;  (corfu-auto t)          ;; Enable auto completion
-;  (corfu-separator ?\s)   ;; Orderless field separator
-;  (corfu-quit-at-boundary nil) ;; Never quit at completion boundary
-;  (corfu-quit-no-match nil)    ;; Never quit, even if there is no match
-;  (corfu-preview-current nil)   ;; Disable current candidate preview
-;  (corfu-preselect 'prompt)    ;; Preselect the prompt
-;  (corfu-on-exact-match nil)   ;; Configure handling of exact matches
-;  (corfu-scroll-margin 5)      ;; Use scroll margin
-;  :init
-;  (global-corfu-mode))
-;
-;(use-package cape
-;  :straight t
-;  :init
-;  ;; Add useful completion sources
-;  (add-to-list 'completion-at-point-functions #'cape-file)
-;  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-;  (add-to-list 'completion-at-point-functions #'cape-keyword))
-;
-;(use-package orderless
-;  :straight t
-;  :custom
-;  (completion-styles '(orderless basic))
-;  (completion-category-overrides '((file (styles . (partial-completion))))))
 
-
-;; LSP-mode
-(use-package lsp-mode
-  :straight t
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  :hook ((python-mode . lsp)
-         (rust-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
 
 
 ;; Auto-generated content
