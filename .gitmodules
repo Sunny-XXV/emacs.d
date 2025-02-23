@@ -118,3 +118,12 @@
 [submodule "site-lisp/rainbow-delimeters"]
 	path = site-lisp/rainbow-delimeters
 	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "site-lisp/denote"]
+	path = site-lisp/denote
+	url = https://github.com/protesilaos/denote.git
+[submodule "site-lisp/avy"]
+	path = site-lisp/avy
+	url = https://github.com/abo-abo/avy.git
+[submodule "site-lisp/org-roam"]
+	path = site-lisp/org-roam
+	url = https://github.com/org-roam/org-roam.git
