@@ -84,12 +84,12 @@
 (setq scroll-conservatively 10)
 (setq scroll-margin 8)
 
-;; Auto-Save
-(require 'auto-save)
-(auto-save-enable)
 
-(setq auto-save-silent t)   ; quietly save
-(setq auto-save-delete-trailing-whitespace t)  ; automatically delete spaces at the end of the line when saving
+;; treesit
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
 
 
 ;;; configurations go above
