@@ -103,3 +103,18 @@
 [submodule "site-lisp/shrink-path"]
 	path = site-lisp/shrink-path
 	url = https://gitlab.com/bennya/shrink-path.el.git
+[submodule "site-lisp/consult-eglot"]
+	path = site-lisp/consult-eglot
+	url = https://github.com/mohkale/consult-eglot.git
+[submodule "site-lisp/flycheck"]
+	path = site-lisp/flycheck
+	url = https://github.com/flycheck/flycheck.git
+[submodule "site-lisp/flymake-flycheck"]
+	path = site-lisp/flymake-flycheck
+	url = https://github.com/purcell/flymake-flycheck.git
+[submodule "site-lisp/nerd-icons-corfu"]
+	path = site-lisp/nerd-icons-corfu
+	url = https://github.com/LuigiPiucco/nerd-icons-corfu.git
+[submodule "site-lisp/rainbow-delimeters"]
+	path = site-lisp/rainbow-delimeters
+	url = https://github.com/Fanael/rainbow-delimiters.git

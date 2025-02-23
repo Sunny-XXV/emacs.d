@@ -96,6 +96,12 @@
          (compilation-buffer-name-function (lambda (major-mode-name) "*git-svn*")))
     (compile (concat "git svn " command))))
 
+;; Undo tree
+(require 'undo-tree)
+(with-eval-after-load 'undo-tree
+ (global-undo-tree-mode t)
+ (setq undo-tree-auto-save-history nil))
+
 
 (provide 'init-git)
 ;;; init-git.el ends here

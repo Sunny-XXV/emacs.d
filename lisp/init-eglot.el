@@ -4,8 +4,8 @@
 
 ;;; Code:
 
-
-(use-package 'eglot)
+(require 'eglot)
+(require 'consult-eglot)
 
 
 (provide 'init-eglot)

@@ -2,10 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(maybe-require-package 'flymake "1.2.1")
+(require 'flymake)
 
 ;; Use flycheck checkers with flymake, to extend its coverage
-(when (maybe-require-package 'flymake-flycheck)
+(when (require 'flymake-flycheck)
   ;; Disable flycheck checkers for which we have flymake equivalents
   (with-eval-after-load 'flycheck
     (setq-default

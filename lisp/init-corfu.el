@@ -22,16 +22,22 @@
 
 (require 'corfu)
 (setq corfu-auto t
+      corfu-auto-delay 0.2
       corfu-separator ?\s
       corfu-quit-at-boundary nil
       corfu-quit-no-match nil
       corfu-preview-current nil
-      corfu-preselect 'prompt
+      corfu-preselect-first t
       corfu-on-exact-match nil
       corfu-scroll-margin 5)
 
-(with-eval-after-load 'eshell
-  (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
+;; Add nerd-icons for corfu completion margin
+(require 'nerd-icons-corfu)
+(add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter)
+
+
+;(with-eval-after-load 'eshell
+;  (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
 
 (add-hook 'after-init-hook 'global-corfu-mode)
 
