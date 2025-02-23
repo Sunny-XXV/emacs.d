@@ -51,7 +51,15 @@ Return a list of languages seen along the way."
                 (push (intern emacs-lang) seen-grammars)))))))
     seen-grammars))
 
-(sanityinc/auto-configure-treesitter)
+(when *is-a-mac*
+    (sanityinc/auto-configure-treesitter))
+
+(setq major-mode-remap-alist
+        '((js-mode       . js-ts-mode)
+          (css-mode      . css-ts-mode)
+          (python-mode   . python-ts-mode)
+          (rust-mode     . rust-ts-mode)
+          (c-mode        . c-ts-mode)))
 
 
 ;;; Support remapping of additional libraries

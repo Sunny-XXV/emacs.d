@@ -37,7 +37,7 @@
 (setq doom-modeline-minor-modes nil)
 (setq doom-modeline-enable-word-count t)
 (setq doom-modeline-continuous-word-count-modes '(markdown-mode gfm-mode org-mode))
-(setq doom-modeline-buffer-encoding t)
+(setq doom-modeline-buffer-encoding nil)
 (setq doom-modeline-indent-info nil)
 (setq doom-modeline-total-line-number nil)
 (setq doom-modeline-vcs-icon t)
