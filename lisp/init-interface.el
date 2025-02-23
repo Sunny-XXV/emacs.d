@@ -2,11 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package nerd-icons
-  :ensure t
-  :straight t
-  :custom
-  (nerd-icons-font-family "JetBrainsMono Nerd Font Mono"))
+(require 'nerd-icons)
 
 (provide 'init-interface)
 ;;; init-utils.el ends here

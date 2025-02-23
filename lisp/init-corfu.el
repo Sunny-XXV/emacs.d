@@ -6,43 +6,34 @@
 ;; TODO Default sort order should place [a-z] before punctuation
 
 (setq tab-always-indent 'complete)
-(when (use-package orderless :straight t)
-  (with-eval-after-load 'vertico
-    (require 'orderless)
-    (setq completion-styles '(orderless basic))))
+(with-eval-after-load 'vertico
+  (require 'orderless)
+  (setq completion-styles '(orderless basic)))
 (setq completion-category-defaults nil
       completion-category-overrides '((file (styles . (partial-completion)))))
 (setq completion-cycle-threshold 4)
 
-(use-package cape
-  :straight t
-  :init
-  ;; Add useful completion sources
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-keyword))
+(require 'cape)
+(with-eval-after-load 'cape
+                      (add-hook 'completion-at-point-functions #'cape-dabbrev)
+                      (add-hook 'completion-at-point-functions #'cape-file)
+                      (add-hook 'completion-at-point-functions #'cape-history))
 
-(use-package corfu
-  :straight t
-  :custom
-  (corfu-auto t)          ;; Enable auto completion
-  (corfu-separator ?\s)   ;; Orderless field separator
-  (corfu-quit-at-boundary nil) ;; Never quit at completion boundary
-  (corfu-quit-no-match nil)    ;; Never quit, even if there is no match
-  (corfu-preview-current nil)   ;; Disable current candidate preview
-  (corfu-preselect 'prompt)    ;; Preselect the prompt
-  (corfu-on-exact-match nil)   ;; Configure handling of exact matches
-  (corfu-scroll-margin 5)      ;; Use scroll margin
-  :config
-  (with-eval-after-load 'eshell
-                        (add-hook 'eshell-mode-hook (lambda () (setq-default corfu-auto nil))))
-  (add-hook 'after-init-hook 'global-corfu-mode))
-;
-;(use-package orderless
-;  :straight t
-;  :custom
-;  (completion-styles '(orderless basic))
-;  (completion-category-overrides '((file (styles . (partial-completion))))))
+
+(require 'corfu)
+(setq corfu-auto t
+      corfu-separator ?\s
+      corfu-quit-at-boundary nil
+      corfu-quit-no-match nil
+      corfu-preview-current nil
+      corfu-preselect 'prompt
+      corfu-on-exact-match nil
+      corfu-scroll-margin 5)
+
+(with-eval-after-load 'eshell
+  (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
+
+(add-hook 'after-init-hook 'global-corfu-mode)
 
 
 ;(when (and (version< "28.1" emacs-version) (use-package corfu :straight t))

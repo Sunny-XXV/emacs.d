@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package doom-themes
+(require 'doom-themes
   :ensure t
   :straight t
   :config

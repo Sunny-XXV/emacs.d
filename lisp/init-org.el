@@ -23,9 +23,9 @@
 ;;; Code:
 
 (when *is-a-mac*
-  (use-package grab-mac-link :straight t))
+  (require 'grab-mac-link))
 
-(use-package org-cliplink :straight t)
+(require 'org-cliplink)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -62,7 +62,7 @@
 
 
 
-(use-package writeroom-mode :straight t)
+(require 'writeroom-mode)
 
 (define-minor-mode prose-mode
   "Set up a buffer for prose editing.
@@ -326,10 +326,10 @@ typical word processor."
 
 
 
-(use-package org-pomodoro :straight t)
-(setq org-pomodoro-keep-killed-pomodoro-time t)
-(with-eval-after-load 'org-agenda
-  (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
+;(require 'org-pomodoro)
+;(setq org-pomodoro-keep-killed-pomodoro-time t)
+;(with-eval-after-load 'org-agenda
+;  (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro))
 
 
 ;; ;; Show iCal calendars in the org agenda

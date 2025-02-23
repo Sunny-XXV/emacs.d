@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package textile-mode :straight t)
+(require 'textile-mode)
 
 (setq auto-mode-alist
       (cons '("\\.textile\\'" . textile-mode) auto-mode-alist))

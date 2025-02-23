@@ -1,0 +1,105 @@
+[submodule "site-lisp/auto-save"]
+	path = site-lisp/auto-save
+	url = https://github.com/manateelazycat/auto-save.git
+[submodule "site-lisp/orderless"]
+	path = site-lisp/orderless
+	url = https://github.com/oantolin/orderless.git
+[submodule "site-lisp/corfu"]
+	path = site-lisp/corfu
+	url = https://github.com/minad/corfu.git
+[submodule "site-lisp/vertico"]
+	path = site-lisp/vertico
+	url = https://github.com/minad/vertico.git
+[submodule "site-lisp/cape"]
+	path = site-lisp/cape
+	url = https://github.com/minad/cape.git
+[submodule "site-lisp/llama"]
+	path = site-lisp/llama
+	url = https://github.com/tarsius/llama.git
+[submodule "site-lisp/git-timemachine"]
+	path = site-lisp/git-timemachine
+	url = https://codeberg.org/pidu/git-timemachine.git
+[submodule "site-lisp/git-link"]
+	path = site-lisp/git-link
+	url = https://github.com/sshaw/git-link.git
+[submodule "site-lisp/magit"]
+	path = site-lisp/magit
+	url = https://github.com/magit/magit.git
+[submodule "site-lisp/magit-todos"]
+	path = site-lisp/magit-todos
+	url = https://github.com/alphapapa/magit-todos.git
+[submodule "site-lisp/nerd-icons"]
+	path = site-lisp/nerd-icons
+	url = https://github.com/rainstormstudio/nerd-icons.el.git
+[submodule "site-lisp/doom-modeline"]
+	path = site-lisp/doom-modeline
+	url = https://github.com/seagle0128/doom-modeline.git
+[submodule "site-lisp/org-cliplink"]
+	path = site-lisp/org-cliplink
+	url = https://github.com/rexim/org-cliplink.git
+[submodule "site-lisp/writeroom-mode"]
+	path = site-lisp/writeroom-mode
+	url = https://github.com/joostkremers/writeroom-mode.git
+[submodule "site-lisp/flymake-ruff"]
+	path = site-lisp/flymake-ruff
+	url = https://github.com/erickgnavar/flymake-ruff.git
+[submodule "site-lisp/toml-mode"]
+	path = site-lisp/toml-mode
+	url = https://github.com/dryman/toml-mode.el.git
+[submodule "site-lisp/textile-mode"]
+	path = site-lisp/textile-mode
+	url = https://github.com/juba/textile-mode.git
+[submodule "site-lisp/marginalia"]
+	path = site-lisp/marginalia
+	url = https://github.com/minad/marginalia.git
+[submodule "site-lisp/consult"]
+	path = site-lisp/consult
+	url = https://github.com/minad/consult.git
+[submodule "site-lisp/whitespace-cleanup-mode"]
+	path = site-lisp/whitespace-cleanup-mode
+	url = https://github.com/purcell/whitespace-cleanup-mode.git
+[submodule "site-lisp/git-modes"]
+	path = site-lisp/git-modes
+	url = https://github.com/magit/git-modes.git
+[submodule "site-lisp/with-editor"]
+	path = site-lisp/with-editor
+	url = https://github.com/magit/with-editor.git
+[submodule "site-lisp/async"]
+	path = site-lisp/async
+	url = https://github.com/jwiegley/emacs-async.git
+[submodule "site-lisp/dash"]
+	path = site-lisp/dash
+	url = https://github.com/magnars/dash.el.git
+[submodule "site-lisp/f"]
+	path = site-lisp/f
+	url = https://github.com/rejeep/f.el.git
+[submodule "site-lisp/s"]
+	path = site-lisp/s
+	url = https://github.com/magnars/s.el.git
+[submodule "site-lisp/hl-todo"]
+	path = site-lisp/hl-todo
+	url = https://github.com/tarsius/hl-todo.git
+[submodule "site-lisp/pcre2el"]
+	path = site-lisp/pcre2el
+	url = https://github.com/joddie/pcre2el.git
+[submodule "site-lisp/evil"]
+	path = site-lisp/evil
+	url = https://github.com/emacs-evil/evil.git
+[submodule "site-lisp/undo-fu"]
+	path = site-lisp/undo-fu
+	url = https://codeberg.org/ideasman42/emacs-undo-fu.git
+[submodule "site-lisp/undo-tree"]
+	path = site-lisp/undo-tree
+	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "site-lisp/grab-mac-link"]
+	path = site-lisp/grab-mac-link
+	url = https://github.com/xuchunyang/grab-mac-link.el.git
+[submodule "site-lisp/visual-fill-column"]
+	path = site-lisp/visual-fill-column
+	url = https://codeberg.org/joostkremers/visual-fill-column.git
+[submodule "site-lisp/evil-mc"]
+	path = site-lisp/evil-mc
+	url = https://github.com/gabesoft/evil-mc.git
+[submodule "site-lisp/shrink-path"]
+	path = site-lisp/shrink-path
+	url = https://gitlab.com/bennya/shrink-path.el.git

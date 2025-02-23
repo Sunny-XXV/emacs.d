@@ -8,14 +8,23 @@
 ;; TODO: link commits from vc-log to magit-show-commit
 ;; TODO: smerge-mode
 
-(use-package git-modes :straight t)
-;(use-package llama :straight t)
-(when (use-package git-timemachine :straight t)
+;; Add magit list to list
+(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/with-editor/lisp")
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/.emacs.d/site-lisp/magit/Documentation/"))
+
+(require 'git-modes)
+(when (require 'git-timemachine)
   (global-set-key (kbd "C-x v t") 'git-timemachine-toggle))
 
-(use-package git-link :straight t)
+(require 'git-link)
 
-(when (use-package magit :straight t)
+(when (require 'magit)
   (setq-default magit-diff-refine-hunk 'all)
 
   (sanityinc/fullframe-mode 'magit-status-mode)
@@ -42,7 +51,7 @@
 (with-eval-after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up))
 
-(use-package magit-todos :straight t)
+(require 'magit-todos)
 
 (add-hook 'git-commit-mode-hook 'goto-address-mode)
 
@@ -55,8 +64,8 @@
 
 ;;; git-svn support
 
-;; (when (use-package magit-svn :straight t)
-;;   (use-package magit-svn :straight t)
+;; (when (require 'magit-svn)
+;;   (require 'magit-svn)
 ;;   (autoload 'magit-svn-enabled "magit-svn")
 ;;   (defun sanityinc/maybe-enable-magit-svn-mode ()
 ;;     (when (magit-svn-enabled)

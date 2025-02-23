@@ -14,7 +14,7 @@
 
 (setq python-shell-interpreter "python3")
 
-(require-package 'pip-requirements)
+;(require-package 'pip-requirements)
 
 (when (maybe-require-package 'flymake-ruff)
   (defun sanityinc/flymake-ruff-maybe-enable ()

@@ -15,7 +15,7 @@
   (add-hook hook 'sanityinc/show-trailing-whitespace))
 
 
-(use-package whitespace-cleanup-mode :straight t)
+(require 'whitespace-cleanup-mode)
 (add-hook 'after-init-hook 'global-whitespace-cleanup-mode)
 (with-eval-after-load 'whitespace-cleanup-mode)
 

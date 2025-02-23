@@ -27,17 +27,27 @@
 (setq process-adaptive-read-buffering nil)
 (setq jit-lock-defer-time 0)
 
+(setq byte-compile-warnings '(not nresolved
+				  free-vars
+				  callargs
+				  redefine
+				  obsolete
+				  noruntime
+				  cl-functions
+				  interactive-only
+				  ))
+
 ;; Bootstrap config
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(require 'init-straight) ; provides use-package, comes as early as possible
+;(require 'init-straight) ; provides use-package, comes as early as possible
 (require 'init-utils)
 (require 'init-site-lisp)
 ;(require 'init-exec-path)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
-(require 'init-colorschemes)
+;(require 'init-colorschemes)
 (require 'init-interface)
 (require 'init-modeline)
 
@@ -51,8 +61,9 @@
 
 (require 'init-textile)
 (require 'init-org)
+(require 'init-evil)
 
-(setq confirm-kill-emacs #'yes-or-no-p) ; confirm on exit
+;(setq confirm-kill-emacs #'yes-or-no-p) ; confirm on exit
 (electric-pair-mode t) ; Pair brackets automatically
 (add-hook 'prog-mode-hook #'show-paren-mode)
 (add-hook 'prog-mode-hook #'hs-minor-mode) ; code collapsable
@@ -79,95 +90,52 @@
 (setq auto-save-delete-trailing-whitespace t)  ; automatically delete spaces at the end of the line when saving
 
 ;; Ace-window
-(use-package ace-window
- :ensure t
- :straight t
- :bind (("C-x o" . 'ace-window)))
+;(use-package ace-window
+; :ensure t
+; :straight t
+; :bind (("C-x o" . 'ace-window)))
 
 ;; Undo tree
-(use-package undo-tree
- :ensure t
- :straight t
- :init (global-undo-tree-mode)
- :custom
- (undo-tree-auto-save-history nil))
-
-;; Evil
-(use-package evil
- :ensure t
- :straight t
- :init (evil-mode))
-
-;; Avy
-(use-package avy
- :ensure t
- :straight t)
-
-; make avy work like easy motion in vim
-(evil-define-key 'normal 'global "s" 'avy-goto-char-timer)
-(evil-define-key 'visual 'global "s" 'avy-goto-char)
-
-(define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)
-(define-key evil-motion-state-map (kbd "C-j") #'evil-window-down)
-(define-key evil-motion-state-map (kbd "C-k") #'evil-window-up)
-(define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
-
-;; Evil-mc multi cursor editing
-(use-package evil-mc
-  :straight t
-  :config
-  (global-evil-mc-mode 1)  ; enable globally
-
-  ;; Default keybindings will be:
-  ;; grm - Make cursor at point and move to the next match
-  ;; grc - Toggle cursor at point
-  ;; grh - Make cursor at point and move to the next match
-  ;; gru - Undo last cursor
-  ;; grq - Remove all cursors
-  )
+;(use-package undo-tree
+; :ensure t
+; :straight t
+; :init (global-undo-tree-mode)
+; :custom
+; (undo-tree-auto-save-history nil))
 
 ;; Dashboard
-(use-package dashboard
- :ensure t
- :straight t
- :config
- (setq dashboard-banner-logo-title "Welcome to Emacs!")
- (setq dashboard-projects-backend 'projectile)
- (setq dashboard-startup-banner 'official)
- (setq dashboard-items '((recents . 5)
-  (bookmarks . 5)
-  (projects . 10)))
- (dashboard-setup-startup-hook))
-
-;; Rainbow delimiters colorful brackets
-(use-package rainbow-delimiters
- :ensure t
- :straight t
- :hook (prog-mode . rainbow-delimiters-mode))
-
-;; Projectile
-(use-package projectile
- :ensure t
- :straight t
- :bind (("C-c p" . projectile-command-map))
- :config
- (setq projectile-mode-line "Projectile")
- (setq projectile-track-known-projects-automatically nil))
-
-(use-package counsel-projectile
- :ensure t
- :straight t
- :after (projectile)
- :init (counsel-projectile-mode))
-
-;; Flycheck
-;(use-package flycheck
+;(use-package dashboard
 ; :ensure t
 ; :straight t
 ; :config
-; (setq truncate-lines nil)
-; :hook
-; (prog-mode . flycheck-mode))
+; (setq dashboard-banner-logo-title "Welcome to Emacs!")
+; (setq dashboard-projects-backend 'projectile)
+; (setq dashboard-startup-banner 'official)
+; (setq dashboard-items '((recents . 5)
+;  (bookmarks . 5)
+;  (projects . 10)))
+; (dashboard-setup-startup-hook))
+
+;; Rainbow delimiters colorful brackets
+;(use-package rainbow-delimiters
+; :ensure t
+; :straight t
+; :hook (prog-mode . rainbow-delimiters-mode))
+
+;; Projectile
+;(use-package projectile
+; :ensure t
+; :straight t
+; :bind (("C-c p" . projectile-command-map))
+; :config
+; (setq projectile-mode-line "Projectile")
+; (setq projectile-track-known-projects-automatically nil))
+
+;(use-package counsel-projectile
+; :ensure t
+; :straight t
+; :after (projectile)
+; :init (counsel-projectile-mode))
 
 
 
