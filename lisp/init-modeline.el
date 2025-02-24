@@ -7,7 +7,7 @@
 (setq awesome-tray-active-modules '("evil" "location" "belong" "file-path" "mode-name" "date"))
 (setq awesome-tray-info-padding-right 0)
 (setq awesome-tray-hide-mode-line nil)
-(setq mode-line-format nil)
+(setq-default mode-line-format nil)
 (awesome-tray-mode 1)
 
 ;(require 'doom-modeline)

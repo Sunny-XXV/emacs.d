@@ -65,11 +65,12 @@
 (require 'init-org)
 (require 'init-evil)
 
+
 ;(setq confirm-kill-emacs #'yes-or-no-p) ; confirm on exit
 (electric-pair-mode t) ; Pair brackets automatically
 (add-hook 'prog-mode-hook #'show-paren-mode)
 (add-hook 'prog-mode-hook #'hs-minor-mode) ; code collapsable
-(column-number-mode t) ; show col number on mode line
+;(column-number-mode t) ; show col number on mode line
 (global-auto-revert-mode t) ; Auto refresh when other process modifies current file
 
 (tool-bar-mode -1)
@@ -87,8 +88,8 @@
 
 ;; treesit
 (when (and (require 'treesit nil t)
-           (fboundp 'treesit-available-p)
-           (treesit-available-p))
+	   (fboundp 'treesit-available-p)
+	   (treesit-available-p))
   (require 'init-treesitter))
 
 
