@@ -7,9 +7,16 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "e" 'find-file
-  "b1" 'switch-to-buffer
-  "bk" 'kill-buffer)
+  "e" 'neotree-toggle
+  "bb" 'switch-to-buffer
+  "tt" 'awesome-tab-ace-jump
+  "tl" 'awesome-tab-forward-tab
+  "th" 'awesome-tab-backward-tab
+  "tj" 'awesome-tab-forward-group
+  "tk" 'awesome-tab-backward-group
+  "tgx" 'awesome-tab-kill-all-buffers-in-current-group
+  "tgg" 'awesome-tab-switch-group
+  "bx" 'kill-buffer)
 
 
 ;; Evil
@@ -19,7 +26,6 @@
 ;; Evil-surround
 (require 'evil-surround)
 (global-evil-surround-mode 1)
-
 
 ;; Avy
 (require 'avy)
@@ -32,6 +38,19 @@
 (define-key evil-motion-state-map (kbd "C-j") #'evil-window-down)
 (define-key evil-motion-state-map (kbd "C-k") #'evil-window-up)
 (define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
+
+;; For Neotree
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-quick-look)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-refresh)
+(evil-define-key 'normal neotree-mode-map (kbd "j") 'neotree-next-line)
+(evil-define-key 'normal neotree-mode-map (kbd "k") 'neotree-previous-line)
+(evil-define-key 'normal neotree-mode-map (kbd "o") 'neotree-stretch-toggle)
+(evil-define-key 'normal neotree-mode-map (kbd ".") 'neotree-hidden-file-toggle)
+(evil-define-key 'normal neotree-mode-map (kbd "a") 'neotree-create-node)
+(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-delete-node)
 
 ;; Evil-mc multi cursor editing
 (require 'evil-mc)

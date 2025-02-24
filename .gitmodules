@@ -142,3 +142,6 @@
 [submodule "site-lisp/evil-surround"]
 	path = site-lisp/evil-surround
 	url = https://github.com/emacs-evil/evil-surround.git
+[submodule "site-lisp/neotree"]
+	path = site-lisp/neotree
+	url = https://github.com/jaypei/emacs-neotree.git
