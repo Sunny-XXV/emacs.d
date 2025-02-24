@@ -6,7 +6,7 @@
 
 ;;; Code:
 
-;; Produce bactraces when errors occur: can be helpful to diagnose startup issues
+;; Produce bactraces when errors occur: for diagnosing startup issues
 ;; (setq debug-on-error t)
 
 (let ((minver "27.1"))
@@ -57,6 +57,7 @@
 (require 'init-corfu)
 
 (require 'init-whitespace)
+(require 'init-editing-utils)
 
 (require 'init-git)
 
@@ -66,19 +67,11 @@
 (require 'init-evil)
 
 
-;(setq confirm-kill-emacs #'yes-or-no-p) ; confirm on exit
-(electric-pair-mode t) ; Pair brackets automatically
-(add-hook 'prog-mode-hook #'show-paren-mode)
-(add-hook 'prog-mode-hook #'hs-minor-mode) ; code collapsable
-;(column-number-mode t) ; show col number on mode line
-(global-auto-revert-mode t) ; Auto refresh when other process modifies current file
 
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
 (savehist-mode 1) ; Buffer history
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative) ; Relative line numbers
 (setq visible-bell t)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)

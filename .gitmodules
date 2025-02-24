@@ -133,3 +133,9 @@
 [submodule "site-lisp/awesome-tab"]
 	path = site-lisp/awesome-tab
 	url = https://github.com/manateelazycat/awesome-tab.git
+[submodule "site-lisp/evil-leader"]
+	path = site-lisp/evil-leader
+	url = https://github.com/cofi/evil-leader.git
+[submodule "site-lisp/page-break-lines"]
+	path = site-lisp/page-break-lines
+	url = https://github.com/purcell/page-break-lines.git
