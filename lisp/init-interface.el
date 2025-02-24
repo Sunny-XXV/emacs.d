@@ -8,5 +8,8 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode 'rainbow-delimiters-mode)
 
+(require 'awesome-tab)
+(awesome-tab-mode t)
+
 (provide 'init-interface)
 ;;; init-utils.el ends here
