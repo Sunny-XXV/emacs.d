@@ -2,9 +2,24 @@
 ;;; Commentary:
 ;;; Code:
 
+;; global-evil-leader-mode should come before evil
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "e" 'find-file
+  "b1" 'switch-to-buffer
+  "bk" 'kill-buffer)
+
+
 ;; Evil
 (require 'evil)
 (evil-mode)
+
+;; Evil-surround
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
 
 ;; Avy
 (require 'avy)

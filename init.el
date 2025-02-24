@@ -56,17 +56,14 @@
 (require 'init-vertico)
 (require 'init-corfu)
 
-(require 'init-whitespace)
-(require 'init-editing-utils)
-
 (require 'init-git)
-
 
 (require 'init-textile)
 (require 'init-org)
 (require 'init-evil)
 
-
+(require 'init-whitespace)
+(require 'init-editing-utils)
 
 (tool-bar-mode -1)
 (tooltip-mode -1)

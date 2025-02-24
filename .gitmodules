@@ -139,3 +139,6 @@
 [submodule "site-lisp/page-break-lines"]
 	path = site-lisp/page-break-lines
 	url = https://github.com/purcell/page-break-lines.git
+[submodule "site-lisp/evil-surround"]
+	path = site-lisp/evil-surround
+	url = https://github.com/emacs-evil/evil-surround.git
