@@ -11,6 +11,7 @@
 (when (not (display-graphic-p))
   (setq frame-background-mode 'dark))
 
+(global-visual-line-mode t)
 
 ;; Better window border
 (set-face-background 'vertical-border (face-background 'default))
@@ -24,6 +25,8 @@
 (add-hook 'neotree-mode-hook
           (lambda ()
             (display-line-numbers-mode -1)
+            (visual-line-mode -1)
+            (setq-local truncate-lines t)
             (setq mode-line-format nil)))
 
 (provide 'init-interface)
