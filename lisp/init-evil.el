@@ -17,6 +17,7 @@
   "txe" 'awesome-tab-kill-other-buffers-in-current-group
   "txa" 'awesome-tab-kill-all-buffers-in-current-group
   "tgg" 'awesome-tab-switch-group
+  "uu" 'undo-tree-visualize
   "bx" 'kill-buffer)
 
 

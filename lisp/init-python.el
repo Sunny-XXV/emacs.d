@@ -7,28 +7,16 @@
 ;; screencast about this: https://www.youtube.com/watch?v=TbIHRHy7_JM
 
 
-(setq auto-mode-alist
-      (append '(("SConstruct\\'" . python-mode)
-                ("SConscript\\'" . python-mode))
-              auto-mode-alist))
+(add-hook 'python-ts-mode-hook 'eglot-ensure)
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("ruff" "server")))
+  (add-hook 'auto-save-hook 'eglot-format))
 
-(setq python-shell-interpreter "python3")
+(require 'flymake-ruff)
+(add-hook 'python-mode-hook #'flymake-ruff-load)
 
-;(require-package 'pip-requirements)
-
-(when (require 'flymake-ruff)
-  (defun sanityinc/flymake-ruff-maybe-enable ()
-    (when (executable-find "ruff")
-      (require 'ruff-format)
-      (flymake-ruff-load)))
-  (add-hook 'python-mode-hook 'sanityinc/flymake-ruff-maybe-enable))
-
-
-(when (require 'reformatter)
-  (add-hook 'python-mode 'ruff-format-on-save-mode)
-  (reformatter-define ruff
-                      :program "ruff"
-                      :args '("format" "--stdin-filename", buffer-file-name "-")))
+(add-hook 'python-ts-mode-hook 'ruff-format-on-save-mode)
 
 (provide 'init-python)
 ;;; init-python.el ends here
