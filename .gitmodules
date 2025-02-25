@@ -145,3 +145,9 @@
 [submodule "site-lisp/neotree"]
 	path = site-lisp/neotree
 	url = https://github.com/jaypei/emacs-neotree.git
+[submodule "site-lisp/ruff-format"]
+	path = site-lisp/ruff-format
+	url = https://github.com/JoshHayes/emacs-ruff-format.git
+[submodule "site-lisp/reformatter"]
+	path = site-lisp/reformatter
+	url = https://github.com/purcell/emacs-reformatter.git

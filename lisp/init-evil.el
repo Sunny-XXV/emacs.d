@@ -14,7 +14,8 @@
   "th" 'awesome-tab-backward-tab
   "tj" 'awesome-tab-forward-group
   "tk" 'awesome-tab-backward-group
-  "tgx" 'awesome-tab-kill-all-buffers-in-current-group
+  "txe" 'awesome-tab-kill-other-buffers-in-current-group
+  "txa" 'awesome-tab-kill-all-buffers-in-current-group
   "tgg" 'awesome-tab-switch-group
   "bx" 'kill-buffer)
 
