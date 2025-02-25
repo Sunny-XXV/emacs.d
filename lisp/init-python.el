@@ -16,19 +16,19 @@
 
 ;(require-package 'pip-requirements)
 
-(when (maybe-require-package 'flymake-ruff)
+(when (require 'flymake-ruff)
   (defun sanityinc/flymake-ruff-maybe-enable ()
     (when (executable-find "ruff")
+      (require 'ruff-format)
       (flymake-ruff-load)))
   (add-hook 'python-mode-hook 'sanityinc/flymake-ruff-maybe-enable))
 
-(maybe-require-package 'ruff-format)
 
-(when (maybe-require-package 'toml-mode)
-  (add-to-list 'auto-mode-alist '("poetry\\.lock\\'" . toml-mode)))
-
-(when (maybe-require-package 'reformatter)
-  (reformatter-define black :program "black" :args '("-")))
+(when (require 'reformatter)
+  (add-hook 'python-mode 'ruff-format-on-save-mode)
+  (reformatter-define ruff
+                      :program "ruff"
+                      :args '("format" "--stdin-filename", buffer-file-name "-")))
 
 (provide 'init-python)
 ;;; init-python.el ends here
