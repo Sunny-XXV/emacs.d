@@ -151,3 +151,9 @@
 [submodule "site-lisp/reformatter"]
 	path = site-lisp/reformatter
 	url = https://github.com/purcell/emacs-reformatter.git
+[submodule "site-lisp/envrc"]
+	path = site-lisp/envrc
+	url = https://github.com/purcell/envrc.git
+[submodule "site-lisp/inheritenv"]
+	path = site-lisp/inheritenv
+	url = https://github.com/purcell/inheritenv.git

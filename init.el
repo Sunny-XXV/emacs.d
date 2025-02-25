@@ -78,6 +78,7 @@
 (setq scroll-conservatively 10)
 (setq scroll-margin 8)
 
+;(require 'init-envrc)
 
 ;; treesit
 (when (and (require 'treesit nil t)

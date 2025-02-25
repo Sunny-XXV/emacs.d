@@ -7,7 +7,7 @@
 ;; screencast about this: https://www.youtube.com/watch?v=TbIHRHy7_JM
 
 
-(add-hook 'python-ts-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook 'eglot-ensure)
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
                '(python-mode . ("ruff" "server")))
@@ -16,6 +16,7 @@
 (require 'flymake-ruff)
 (add-hook 'python-mode-hook #'flymake-ruff-load)
 
+(require 'ruff-format)
 (add-hook 'python-ts-mode-hook 'ruff-format-on-save-mode)
 
 (provide 'init-python)
