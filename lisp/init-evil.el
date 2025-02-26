@@ -18,8 +18,13 @@
   "txa" 'awesome-tab-kill-all-buffers-in-current-group
   "tgg" 'awesome-tab-switch-group
   "uu" 'undo-tree-visualize
+  "cf" 'eglot-format
+  "cs" 'eglot
   "bx" 'kill-buffer)
 
+;; Toggle commentaries for code.
+(require 'evil-commentary)
+(evil-commentary-mode)
 
 ;; Evil
 (require 'evil)
@@ -46,6 +51,7 @@
 (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-quick-look)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-refresh)
 (evil-define-key 'normal neotree-mode-map (kbd "j") 'neotree-next-line)
 (evil-define-key 'normal neotree-mode-map (kbd "k") 'neotree-previous-line)

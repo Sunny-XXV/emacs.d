@@ -3,11 +3,11 @@
 ;;; Code:
 
 ;; Vertico + Marginalia + Consult
-(require 'vertico)
-(vertico-mode t)
+(when (require 'vertico)
+  (vertico-mode t))
 
-(require 'marginalia)
-(marginalia-mode)
+(when (require 'marginalia)
+  (marginalia-mode))
 
 (require 'consult)
 ;(with-eval-after-load 'consult

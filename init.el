@@ -9,12 +9,6 @@
 ;; Produce bactraces when errors occur: for diagnosing startup issues
 ;; (setq debug-on-error t)
 
-(let ((minver "27.1"))
-  (when (version< emacs-version minver)
-    (error "Emacs should be updated to v%s or higher" minver)))
-(when (version< emacs-version "28.1")
-  (message "Update for full functionality"))
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;; (require 'init-benchmarking) ;; Measure startup time
 
@@ -41,13 +35,13 @@
 ;; Bootstrap config
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(require 'init-utils)
+;; (require 'init-utils)
 (require 'init-site-lisp)
-;(require 'init-exec-path)
+;; (require 'init-exec-path)
 
-(require 'init-frame-hooks)
-(require 'init-xterm)
-;(require 'init-colorschemes)
+;; (require 'init-frame-hooks)
+;; (require 'init-xterm)
+;; (require 'init-colorschemes)
 (require 'init-interface)
 (require 'init-modeline)
 (require 'init-flymake)
@@ -77,14 +71,13 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (setq scroll-conservatively 10)
 (setq scroll-margin 8)
+(require 'dirvish)
+(dirvish-override-dired-mode)
 
 ;(require 'init-envrc)
 
 ;; treesit
-(when (and (require 'treesit nil t)
-	   (fboundp 'treesit-available-p)
-	   (treesit-available-p))
-  (require 'init-treesitter))
+(require 'init-treesitter)
 
 
 ;;; configurations go above

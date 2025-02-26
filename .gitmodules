@@ -157,3 +157,9 @@
 [submodule "site-lisp/inheritenv"]
 	path = site-lisp/inheritenv
 	url = https://github.com/purcell/inheritenv.git
+[submodule "site-lisp/dirvish"]
+	path = site-lisp/dirvish
+	url = https://github.com/alexluigit/dirvish.git
+[submodule "site-lisp/evil-commentary"]
+	path = site-lisp/evil-commentary
+	url = https://github.com/linktohack/evil-commentary.git
